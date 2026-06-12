@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elixra - History</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Elixra - Skin Condition History</h1>
+  </header>
+
+  <main>
+    <button onclick="downloadData()" class="start-btn">
+  Download History 📄
+</button>
+    <table border="1" cellspacing="0" cellpadding="8">
+      <thead>
+        <tr>
+          <th>Date</th>
+<th>Skin Type</th>
+<th>Acne</th>
+<th>Dryness</th>
+<th>Oiliness</th>
+        </tr>
+      </thead>
+      <tbody id="historyTable"></tbody>
+    </table>
+
+   <a href="index.html">Back to Home</a>
+
+<script>
+
+let entries = JSON.parse(localStorage.getItem('skinEntries')) || [];
+
+let table = document.getElementById('historyTable');
+
+entries.forEach(function(e){
+
+    let row = table.insertRow();
+
+    row.insertCell(0).innerText = e.date;
+    row.insertCell(1).innerText = e.skinType;
+    row.insertCell(2).innerText = e.acne;
+    row.insertCell(3).innerText = e.dryness;
+    row.insertCell(4).innerText = e.oiliness;
+
+});
+
+function downloadData(){
+
+    let data =
+    localStorage.getItem("skinEntries");
+
+    let blob =
+    new Blob([data], {type:"text/plain"});
+
+    let a =
+    document.createElement("a");
+
+    a.href =
+    URL.createObjectURL(blob);
+
+    a.download =
+    "Elixra_History.txt";
+
+    a.click();
+}
+
+</script>
+
+</body>
+</html>
