@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Elixra Dashboard</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cinzel:wght@600&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+  <style>
+
+    .dashboard-container{
+      width: 90%;
+      max-width: 1100px;
+      margin: 40px auto;
+
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .dashboard-card{
+      background: #f5e6d3;
+
+      padding: 25px;
+
+      border-radius: 20px;
+
+      box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+
+      text-align: center;
+
+      transition: 0.3s ease;
+
+      animation: fadeIn 0.8s ease;
+    }
+
+    .dashboard-card:hover{
+      transform: translateY(-8px);
+      box-shadow: 0px 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .dashboard-card h2{
+      color: #cc8800;
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .dashboard-card p{
+      font-size: 28px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    .back-btn{
+      display: block;
+
+      width: fit-content;
+
+      margin: 30px auto;
+
+      padding: 12px 22px;
+
+      background: linear-gradient(90deg, #ffcc00, #ffb300);
+
+      color: #333;
+
+      text-decoration: none;
+
+      border-radius: 12px;
+
+      font-weight: bold;
+
+      transition: 0.3s;
+    }
+
+    .back-btn:hover{
+      transform: scale(1.05);
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<header>
+  <h1>
+    <span class="welcome">Elixra</span>
+    <span class="brand">Dashboard</span>
+  </h1>
+</header>
+
+<main>
+
+<div class="dashboard-container">
+
+  <div class="dashboard-card">
+    <h2>Total Entries ✨</h2>
+    <p id="totalEntries">0</p>
+  </div>
+
+  <div class="dashboard-card">
+    <h2>Latest Skin Type </h2>
+    <p id="latestSkin">-</p>
+  </div>
+
+  <div class="dashboard-card">
+    <h2>Acne Status </h2>
+    <p id="latestAcne">-</p>
+  </div>
+
+  <div class="dashboard-card">
+    <h2>Dryness </h2>
+    <p id="latestDryness">-</p>
+  </div>
+
+  <div class="dashboard-card">
+    <h2>Oiliness ✨</h2>
+    <p id="latestOiliness">-</p>
+    
+    
+  </div>
+
+</div>
+
+<a href="index.html" class="back-btn">
+  ← Back to Home
+</a>
+
+</main>
+
+<script>
+
+let entries =
+JSON.parse(localStorage.getItem("skinEntries")) || [];
+
+document.getElementById("totalEntries").innerText =
+entries.length;
+
+if(entries.length > 0){
+
+    let latest = entries[entries.length - 1];
+
+    document.getElementById("latestSkin").innerText =
+    latest.skinType;
+
+    document.getElementById("latestAcne").innerText =
+    latest.acne;
+
+    document.getElementById("latestDryness").innerText =
+    latest.dryness;
+
+    document.getElementById("latestOiliness").innerText =
+    latest.oiliness;
+}
+
+
+</script>
+
+</body>
+</html>
