@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Elixra - Skin Care Tracker</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+  <h1>Elixra - Skin Care Tracker</h1>
+</header>
+
+<main>
+
+<form id="skinForm">
+
+  <label>Date:</label>
+  <input type="date" id="date" required>
+
+  <label>Skin Type:</label>
+  <select id="skinType" required>
+    <option value="">Select Skin Type</option>
+    <option value="Dry">Dry</option>
+    <option value="Oily">Oily</option>
+    <option value="Combination">Combination</option>
+  </select>
+
+  <label>Acne Level:</label>
+  <select id="acne" required>
+    <option value="">Select Acne Level</option>
+    <option value="Low">Low</option>
+    <option value="Medium">Medium</option>
+    <option value="High">High</option>
+  </select>
+
+  <label>Dryness:</label>
+  <select id="dryness" required>
+    <option value="">Select Dryness</option>
+    <option value="Low">Low</option>
+    <option value="Medium">Medium</option>
+    <option value="High">High</option>
+  </select>
+
+  <label>Oiliness:</label>
+  <select id="oiliness" required>
+    <option value="">Select Oiliness</option>
+    <option value="Low">Low</option>
+    <option value="Medium">Medium</option>
+    <option value="High">High</option>
+  </select>
+
+  <div class="form-actions">
+
+    <a href="history.html" class="history-btn">
+      View History
+    </a>
+
+    <a href="userdata.html" class="history-btn">
+      User Data
+    </a>
+
+    <button type="submit">
+      Save Entry ✨
+    </button>
+
+  </div>
+
+</form>
+<div id="tipsBox" class="intro-card" style="display:none; margin-top:20px;">
+  
+  <h2>Personalized Skin Care Tips </h2>
+
+  <p id="skinTips"></p>
+
+</div>
+
+</main>
+
+<script>
+
+document.getElementById("skinForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const entry = {
+        date: document.getElementById("date").value,
+        skinType: document.getElementById("skinType").value,
+        acne: document.getElementById("acne").value,
+        dryness: document.getElementById("dryness").value,
+        oiliness: document.getElementById("oiliness").value
+    };
+
+    let entries =
+        JSON.parse(localStorage.getItem("skinEntries")) || [];
+
+    entries.push(entry);
+
+    localStorage.setItem(
+        "skinEntries",
+        JSON.stringify(entries)
+    );
+
+   // Show personalized tips
+
+let tips = "";
+
+if(entry.skinType === "Dry"){
+
+    tips =
+    "💧 Your skin is dry. Use a hydrating moisturizer, drink more water, and avoid harsh cleansers.";
+
+}
+
+else if(entry.skinType === "Oily"){
+
+    tips =
+    "✨ Your skin is oily. Wash your face regularly, use oil-free products, and avoid touching your face frequently.";
+
+}
+
+else if(entry.skinType === "Combination"){
+
+    tips =
+    "🌸 Your skin is combination type. Balance hydration and oil control using gentle skincare products.";
+
+}
+
+document.getElementById("tipsBox").style.display =
+"block";
+
+document.getElementById("skinTips").innerText =
+tips;
+
+    document.getElementById("skinForm").reset();
+
+});
+
+</script>
+
+</body>
+</html>
