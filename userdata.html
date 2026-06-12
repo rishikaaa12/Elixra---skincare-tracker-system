@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elixra - User Data</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .user-container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .user-card {
+      background: #f5e6d3;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+
+    .user-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .user-card h3 {
+      margin-top: 0;
+      color: #ff9900;
+    }
+
+    .user-card p {
+      margin: 8px 0;
+      color: #444;
+      font-size: 14px;
+    }
+
+    .empty-msg {
+      text-align: center;
+      font-size: 18px;
+      color: #666;
+      margin-top: 40px;
+    }
+
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 20px auto;
+      padding: 12px 20px;
+      background: linear-gradient(90deg, #ffcc00, #ffb300);
+      color: #333;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Elixra - User Records</h1>
+</header>
+
+<main>
+  <div id="userContainer" class="user-container"></div>
+</main>
+
+<a href="tracker.html" class="back-btn">← Back to Tracker</a>
+
+<script>
+  let entries = JSON.parse(localStorage.getItem('skinEntries')) || [];
+
+  let container = document.getElementById('userContainer');
+
+  if(entries.length === 0){
+    container.innerHTML = `
+      <div class="empty-msg">
+        No records found 
+      </div>
+    `;
+  }
+
+  entries.forEach(function(e, index){
+
+    let card = document.createElement('div');
+    card.classList.add('user-card');
+
+    card.innerHTML = `
+      <h3>User Entry ${index + 1}</h3>
+
+      <p><strong>Date:</strong> ${e.date}</p>
+
+      <p><strong>Skin Type:</strong> ${e.skinType}</p>
+
+      <p><strong>Acne Level:</strong> ${e.acne}</p>
+
+      <p><strong>Dryness:</strong> ${e.dryness}</p>
+
+      <p><strong>Oiliness:</strong> ${e.oiliness}</p>
+    `;
+
+    container.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
