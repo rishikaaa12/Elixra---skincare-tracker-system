@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Elixra - Skin Care Tips</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cinzel:wght@600&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+  <style>
+
+    .tips-container{
+      width: 90%;
+      max-width: 1100px;
+      margin: 40px auto;
+
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .tip-card{
+      background: #f5e6d3;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+
+      transition: 0.3s ease;
+      animation: fadeIn 0.8s ease;
+    }
+
+    .tip-card:hover{
+      transform: translateY(-8px);
+      box-shadow: 0px 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .tip-card h2{
+      color: #cc8800;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .tip-card ul{
+      padding-left: 20px;
+    }
+
+    .tip-card li{
+      margin-bottom: 12px;
+      line-height: 1.7;
+      color: #444;
+      font-size: 14px;
+    }
+
+    .back-btn{
+      display: block;
+      width: fit-content;
+      margin: 20px auto 40px;
+
+      padding: 12px 22px;
+
+      background: linear-gradient(90deg, #ffcc00, #ffb300);
+
+      color: #333;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: bold;
+
+      transition: 0.3s;
+    }
+
+    .back-btn:hover{
+      transform: scale(1.05);
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<header>
+  <h1>
+    <span class="welcome">Skin Care</span>
+    <span class="brand">Tips</span>
+  </h1>
+</header>
+
+<main>
+
+<div class="tips-container">
+
+  <div class="tip-card">
+
+    <h2>Dry Skin 💧</h2>
+
+    <ul>
+      <li>Use a gentle hydrating cleanser</li>
+      <li>Apply moisturizer twice daily</li>
+      <li>Drink plenty of water</li>
+      <li>Avoid harsh face washes</li>
+      <li>Use sunscreen regularly</li>
+    </ul>
+
+  </div>
+
+  <div class="tip-card">
+
+    <h2>Oily Skin ✨</h2>
+
+    <ul>
+      <li>Wash face regularly</li>
+      <li>Use oil-free moisturizers</li>
+      <li>Avoid touching your face</li>
+      <li>Use lightweight sunscreen</li>
+      <li>Clean makeup brushes often</li>
+    </ul>
+
+  </div>
+
+  <div class="tip-card">
+
+    <h2>Acne Care 🌸</h2>
+
+    <ul>
+      <li>Do not squeeze pimples</li>
+      <li>Keep pillow covers clean</li>
+      <li>Use non-comedogenic products</li>
+      <li>Maintain a healthy diet</li>
+      <li>Stay consistent with skincare</li>
+    </ul>
+
+  </div>
+
+  <div class="tip-card">
+
+    <h2>Healthy Habits 💖</h2>
+
+    <ul>
+      <li>Sleep at least 7–8 hours</li>
+      <li>Reduce stress levels</li>
+      <li>Eat fruits and vegetables</li>
+      <li>Exercise regularly</li>
+      <li>Avoid excessive junk food</li>
+    </ul>
+
+  </div>
+
+</div>
+
+<a href="index.html" class="back-btn">
+  ← Back to Home
+</a>
+
+</main>
+
+</body>
+</html>
