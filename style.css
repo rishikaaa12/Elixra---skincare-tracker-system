@@ -1,0 +1,439 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fff7cc, #fff0a6);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header h1 {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: #3a2f00;
+    text-transform: uppercase;
+    text-align: center;
+    animation: fadeSlide 1s ease-in-out;
+
+}
+/* Card Container */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+/* Form Card */
+form {
+    background: #f5e6d3; /* beige */
+    padding: 30px;
+    width: 400px;
+
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+
+    animation: fadeIn 0.8s ease-in-out;
+} eholder {
+    color: #aaa;
+    font-style: italic;
+}
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Hover Effect */
+.intro-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0px 25px 60px rgba(0, 0, 0, 0.5);
+    background: rgba(5, 15, 35, 0.95);
+}
+/* Labels */
+label {
+    font-weight: 600;
+    font-size: 13px;
+    color: #555;
+    letter-spacing: 0.5px;
+}
+/* Inputs */
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+/* Input focus glow */
+input, select, textarea {
+    background: #fffaf3;
+    border: 1px solid #e6d5b8;
+}
+input:hover, select:hover, textarea:hover {
+    border-color: #ffcc33;
+}
+/* Button */
+.start-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #ffcc00, #ffb300);
+    color: #333;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(255, 193, 7, 0.4);
+}
+
+/* Button hover */
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(255, 118, 136, 0.4);
+}
+
+/* Link */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #ff4d6d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Table Styling for History Page */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: rgb(205, 227, 153);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Table Header */
+th {
+    background: linear-gradient(90deg, #ff758c, #ff7eb3);
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+/* Table Data */
+td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+/* Row Hover Effect */
+tr:hover {
+    background-color: #fff0f5;
+}
+
+/* Alternate Row Color */
+tr:nth-child(even) {
+    background-color: #fafafa;
+}
+/* Intro Page Card */
+.intro-card {
+    background: white;
+    padding: 30px;
+    width: 500px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.intro-card h2 {
+    color: #ffd966; /* soft yellow highlight */
+}
+
+.intro-card p {
+    font-family: 'Playfair Display', serif;
+    color: #e6e6e6;
+}
+
+/* Start Button */
+.start-btn {
+    background: linear-gradient(90deg, #ffd966, #ffcc00);
+    color: #1a1a1a;
+}
+.start-btn:hover {
+    transform: scale(1.05);
+}
+/* Heading Styling for Intro Page */
+.welcome {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    display: inline-block;
+    animation: slideLeft 1s ease;
+}
+.brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #ffd966;
+    font-size: 32px;
+    display: inline-block;
+    animation: glowPop 1.2s ease;
+}
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes glowPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+        text-shadow: none;
+    }
+    50% {
+        transform: scale(1.1);
+        text-shadow: 0 0 10px #ffd966;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.option-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.option-group button {
+    flex: 1;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    background: #ffe0b3;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.option-group button:hover {
+    background: #ffd699;
+}
+.option-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.option-group button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    background: #ffe0b3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+.option-group button:hover {
+    background: #ffd699;
+}
+
+/* Selected state */
+.option-group button.active {
+    background: #ff9900 !important;
+    color: white;
+    border: 2px solid #cc7a00;
+    transform: scale(1.08);
+}
+.select-box {
+    padding: 12px;
+    background: #fffaf3;
+    border: 1px solid #e6d5b8;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+}
+
+.popup-box {
+    background: #f5e6d3;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.popup-box button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background: #ffcc66;
+    cursor: pointer;
+}
+select {
+    appearance: none;
+    background: #fffaf3;
+    border: 1px solid #e6d5b8;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 14px;
+}
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Left button */
+.history-btn {
+    text-decoration: none;
+    color: #ff4d6d;
+    font-weight: bold;
+}
+
+/* Right button */
+.form-actions button {
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #ffcc00, #ffb300);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+/* =========================
+   MOBILE RESPONSIVE DESIGN
+========================= */
+
+@media screen and (max-width: 768px){
+
+    /* Main form */
+    form{
+        width: 90%;
+        padding: 20px;
+    }
+
+    /* Intro cards */
+    .intro-card,
+    .about-card,
+    .tip-card,
+    .dashboard-card,
+    .user-card{
+        width: 90%;
+        margin: auto;
+    }
+
+    /* Header */
+    header h1{
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .brand{
+        font-size: 26px;
+    }
+
+    /* Buttons */
+    .start-btn,
+    button{
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Form actions */
+    .form-actions{
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    /* Tables */
+    table{
+        width: 100%;
+        font-size: 12px;
+    }
+
+    th, td{
+        padding: 8px;
+    }
+
+    /* Containers */
+    .dashboard-container,
+    .tips-container,
+    .user-container{
+        grid-template-columns: 1fr;
+    }
+
+    /* Welcome text */
+    #welcomeUser{
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    /* Progress bar */
+    .progress-section{
+        width: 95%;
+    }
+
+}
