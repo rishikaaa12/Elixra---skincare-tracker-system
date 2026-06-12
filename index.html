@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Elixra</title>
+  <link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cinzel:wght@600&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+ <h1><span class="welcome">Welcome</span> to <span class="brand">Elixra</span></h1>
+</header>
+
+<h2 id="welcomeUser" style="text-align:center;"></h2>
+<main>
+  <div class="intro-card">
+    <h2>Your Personal Skin Care Tracker </h2>
+
+    <p>
+      In today’s busy lifestyle, it becomes difficult to keep track of daily skin conditions.
+      Elixra is designed to help you monitor your skin health by recording daily details such
+      as acne, dryness, and oiliness.
+    </p>
+
+    <p>
+      By maintaining a simple digital record, you can easily observe patterns and understand
+      how your skin changes over time. This helps you build better skincare habits and stay
+      consistent with your routine.
+    </p>
+
+    <p>
+      Elixra provides a user-friendly and lightweight platform that makes tracking your skin
+      easy, organized, and accessible anytime.
+    </p>
+
+    <a href="tracker.html" class="start-btn">Get Started →</a>
+    <a href="about.html" class="start-btn">About Project </a>
+    <a href="tips.html" class="start-btn">Skin Care Tips </a>
+    <a href="dashboard.html" class="start-btn">View Dashboard 📊</a>
+  </div>
+</main>
+<script>
+
+let username = localStorage.getItem("elixraUser");
+
+if(!username){
+
+    username = prompt("Enter your name ");
+
+    localStorage.setItem("elixraUser", username);
+}
+
+document.getElementById("welcomeUser").innerText =
+"Welcome " + username;
+
+</script>
+
+</body>
+</html>
